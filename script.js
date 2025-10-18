@@ -217,7 +217,8 @@ function checkName() {
         
         // Show error message if name is entered but invalid
         if (enteredName) {
-            errorMessage.textContent = 'Vui lòng nhập đúng họ tên (có dấu)';
+            errorMessage.innerHTML = 'BỚT ẢO TƯỞNG ĐI MÁ! 🤣';
+            createLaughingEmojis();
         } else {
             errorMessage.textContent = '';
         }
@@ -273,6 +274,36 @@ function createRainFromWish() {
                 createRaindrop(randomX, randomEmoji);
             }, i * 200); // Stagger the creation of raindrops
         }
+    }
+}
+
+function createLaughingEmojis() {
+    const emojis = ['🤣', '😂', '😆', '😝', '🤪'];
+    const container = document.querySelector('.container');
+    const inputSection = document.querySelector('.input-section');
+    const rect = inputSection.getBoundingClientRect();
+    
+    // Create multiple emojis
+    for (let i = 0; i < 8; i++) {
+        setTimeout(() => {
+            const emoji = document.createElement('div');
+            emoji.className = 'laughing-emoji';
+            emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+            
+            // Random position around the input section
+            const randomX = rect.left + (Math.random() * rect.width * 1.5) - rect.width * 0.25;
+            const randomY = rect.top + (Math.random() * rect.height * 1.5) - rect.height * 0.25;
+            
+            emoji.style.left = randomX + 'px';
+            emoji.style.top = randomY + 'px';
+            
+            document.body.appendChild(emoji);
+            
+            // Remove after animation
+            setTimeout(() => {
+                emoji.remove();
+            }, 2000);
+        }, i * 100);
     }
 }
 

@@ -57,8 +57,17 @@ input[type="text"]:focus {
 .error-message {
     color: #d32f2f;
     margin-top: 10px;
-    font-size: 0.9em;
+    font-size: 1.2em;
     min-height: 20px;
+    font-weight: bold;
+    text-shadow: 1px 1px 0 #fff;
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
 }
 
 .highlight-name {
@@ -288,6 +297,38 @@ h1 {
     100% {
         opacity: 0;
         transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+.laughing-emoji {
+    position: fixed;
+    font-size: 30px;
+    z-index: 1000;
+    pointer-events: none;
+    animation: laughBounce 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes laughBounce {
+    0% {
+        opacity: 0;
+        transform: scale(0) rotate(-45deg);
+    }
+    30% {
+        opacity: 1;
+        transform: scale(1.2) rotate(15deg);
+    }
+    60% {
+        transform: scale(0.9) rotate(-15deg);
+    }
+    80% {
+        transform: scale(1.1) rotate(10deg);
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1) rotate(0) translate(var(--random-x, 50px), var(--random-y, 50px));
     }
 }
 
