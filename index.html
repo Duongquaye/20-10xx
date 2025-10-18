@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc Mừng Ngày Phụ Nữ Việt Nam 20/10</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="input-section">
+            <label for="nameInput">Vui Lòng Nhập Tên Của Bạn:</label>
+            <input type="text" id="nameInput" placeholder="Nhập đầy đủ họ tên..." onkeyup="checkName()">
+            <p class="error-message" id="errorMessage"></p>
+        </div>
+        <div class="card" id="wishCard" style="display: none;">
+            <div class="heart"></div>
+            <h1>Chúc Mừng Ngày 20/10</h1>
+            <div class="message">
+                <p>Chúc mừng bạn nhỏ <span id="selectedName" class="highlight-name"></span>:</p>
+                <div class="wishes">
+                    <span>Luôn xinh đẹp rạng ngời ❀</span>
+                    <span>Hạnh phúc viên mãn ♥</span>
+                    <span>Thành công rực rỡ ⭐</span>
+                    <span>Tràn đầy niềm vui 🌸</span>
+                </div>
+            </div>
+            <div class="flowers">
+                <div class="flower">❀</div>
+                <div class="flower">❀</div>
+                <div class="flower">❀</div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
